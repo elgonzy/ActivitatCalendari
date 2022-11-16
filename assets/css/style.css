@@ -1,0 +1,15 @@
+* {
+    margin: 0;
+    box-sizing: border-box;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    background-repeat: no-repeat;
+}
+
+#calendar {
+    border: 1px solid red;
+    margin-top: 5%;
+    margin-left: 29%;
+    width: 41%;
+    height: 523px;
+    background-image: url("../images/DBZ_Wallpaper.jpg");
+}
