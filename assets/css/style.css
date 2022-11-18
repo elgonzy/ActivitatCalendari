@@ -1,14 +1,48 @@
 * {
-    margin: 0;
-    box-sizing: border-box;
     font-family: Verdana, Geneva, Tahoma, sans-serif;
     background-repeat: no-repeat;
 }
 
 #calendar {
-    border: 1px solid red;
     margin-top: 5%;
     margin-left: 29%;
     width: 41%;
-    height: 523px;
+    height: 423px;
+    background-color: darkorange;
+    border: 25px solid darkorange;
+    border-radius: 5px;
+}
+
+p {
+    color: white;
+}
+
+.year {
+    display: inline-flex;
+    width: 8.5%;
+}
+
+.monthName {
+    display: inline-flex;
+    width: 91.5%;
+}
+
+.weekNames {
+    display: inline-flex;
+    width: 14%;
+    text-align: center;
+}
+
+.week {
+    display: inline-flex;
+    width: 14%;
+    text-align: center;
+}
+
+.actualDay {
+    display: inline-flex;
+    width: 14.28%;
+    background-color: darkcyan;
+    border: 2px solid darkcyan;
+    border-radius: 5px;
 }

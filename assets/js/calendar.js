@@ -14,14 +14,117 @@ for (let i = 1; i < new Date(date.getFullYear(), date.getMonth(), 0).getDate(); 
 function createDiv(content, col) {
 
     let newDiv = document.createElement("div");
+    let newP = document.createElement("p");
     let newContent = document.createTextNode(content);
+    let calendarDiv;
 
-    newDiv.appendChild(newContent);
+    newP.appendChild(newContent);
+    newDiv.appendChild(newP);
 
     newDiv.classList.add(col);
 
     calendarDiv = document.getElementById("calendar");
 
-    document.body.insertBefore(newDiv, calendarDiv);
+    calendarDiv.appendChild(newDiv)
+
+}
+
+createDiv(actualYear.toString(), "year");
+createDiv("de " + monthsNames[actualMonth], "monthName");
+
+weekDaysNames.forEach(day => {
+    createDiv(day, "weekNames")
+});
+
+console.log(new Date(date.getFullYear(), date.getMonth(), 1).getDay());
+switch (new Date(date.getFullYear(), date.getMonth(), 1).getDay()) {
+    case 0:
+        monthDays.forEach(day => {
+            if (date.getDate() != day) {
+                createDiv(day.toString(), "week");
+            } else {
+                createDivActualDay(day.toString(), "actualDay");
+
+            }
+        });
+        break;
+    case 1:
+        createDiv(" ", "week");
+        monthDays.forEach(day => {
+            if (date.getDate() != day) {
+                createDiv(day.toString(), "week");
+            } else {
+                createDiv(day.toString(), "actualDay");
+
+            }
+        });
+        break;
+    case 2:
+        for (let i = 0; i < 2; i++) {
+            createDiv(" ", "week");
+        }
+        monthDays.forEach(day => {
+            if (date.getDate() != day) {
+                createDiv(day.toString(), "week");
+            } else {
+                createDiv(day.toString(), "actualDay");
+
+            }
+        });
+        break;
+    case 3:
+        for (let i = 0; i < 3; i++) {
+            createDiv(" ", "week");
+        }
+        monthDays.forEach(day => {
+            if (date.getDate() != day) {
+                createDiv(day.toString(), "week");
+            } else {
+                createDiv(day.toString(), "actualDay");
+
+            }
+        });
+        break;
+    case 4:
+        for (let i = 0; i < 4; i++) {
+            createDiv(" ", "week");
+        }
+        monthDays.forEach(day => {
+            if (date.getDate() != day) {
+                createDiv(day.toString(), "week");
+            } else {
+                createDiv(day.toString(), "actualDay");
+
+            }
+        });
+        break;
+    case 5:
+        for (let i = 0; i < 5; i++) {
+            createDiv(" ", "week");
+        }
+        monthDays.forEach(day => {
+            if (date.getDate() != day) {
+                createDiv(day.toString(), "week");
+            } else {
+                createDiv(day.toString(), "actualDay");
+
+            }
+        });
+        break;
+    case 6:
+        for (let i = 0; i < 6; i++) {
+            createDiv(" ", "week");
+        }
+        monthDays.forEach(day => {
+            if (date.getDate() != day) {
+                createDiv(day.toString(), "week");
+            } else {
+                createDiv(day.toString(), "actualDay");
+
+            }
+        });
+        break;
+
+
 
 }
