@@ -3,6 +3,7 @@
 let weekDaysNames = ["Domingo", "Lunes", "Martes", "Miercoles", "Jueves", "Viernes", "Sabado"];
 let monthsNames = ["Enero", "Febrero", "Marzo", "Abril", "Mayo", "Junio", "Julio", "Agosto", "Septiembre", "Octubre", "Noviembre", "Diciembre"];
 let date = new Date();
+let ActualMonth = date.getMonth()
 
 function createDiv(content, col) {
 
@@ -20,33 +21,37 @@ function createDiv(content, col) {
 
 }
 
-function printAdjacentDays(date, preOrNext) {
-
-    //al ultimo dia del mes anterior restarle el dia de la semana del ultimo dia del mes anterior luego le sumas uno a cada dia de ese valor.
-    if (preOrNext) {
-        let previousMonthDay = new Date(date.getFullYear(), date.getMonth() - 1, new Date(date.getFullYear(), date.getMonth() - 1, 0).getDate()).getDay() - 1;
+function printDaysBefore(date) {
 
 
-        for (let i = 0; i < new Date(date.getFullYear(), date.getMonth(), 0).getDay(); i++) {
-            createDiv(previousMonthDay.toString(), "week");
-            previousMonthDay++;
+    let fristWeekDayActualMonth = new Date(date.getFullYear(), date.getMonth(), 1).getDay();
+    let day = (new Date(date.getFullYear(), date.getMonth(), 0).getDate() - fristWeekDayActualMonth) + 1;
+    console.log(day);
 
-        }
+    for (let i = fristWeekDayActualMonth; i > 0; i--) {
 
+        createDiv(day.toString(), "week")
+        day++;
     }
-    // else {
 
 
-
-    //     let nextMontDay = 1;
-
-    //     for (let i = new Date(date.getFullYear, date.monthDays()); i < 6; i++) {
-
-    //         createDiv(nextMontDay.toString(), "week");
-    //         nextMontDay++;
-    //     }
-    // }
 }
+
+function printDaysAfter(date) {
+
+
+    let lastWeekDayActualMonth = new Date(date.getFullYear(), date.getMonth() + 1, 1).getDay();
+    let day = 1;
+    console.log(lastWeekDayActualMonth);
+
+    for (let i = 7 - lastWeekDayActualMonth; i > 0; i--) {
+
+        createDiv(day.toString(), "week")
+        day++;
+    }
+
+}
+
 
 function printCalendar(date) {
 
@@ -67,17 +72,18 @@ function printCalendar(date) {
         createDiv(day, "weekNames")
     });
 
-    printAdjacentDays(date, true);
+    printDaysBefore(date);
 
     monthDays.forEach(day => {
-        if (date.getDate() != day) {
-            createDiv(day.toString(), "week");
-        } else {
+        if (date.getDate() == day && ActualMonth == date.getMonth()) {
             createDiv(day.toString(), "actualDay");
-
+        } else {
+            createDiv(day.toString(), "week");
         }
     });
-    printAdjacentDays(date, false);
+
+    printDaysAfter(date);
+
 }
 
 function nextMonth(date) {
