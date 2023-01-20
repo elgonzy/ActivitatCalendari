@@ -3,6 +3,7 @@
 let weekDaysNames = ["Domingo", "Lunes", "Martes", "Miercoles", "Jueves", "Viernes", "Sabado"];
 let monthsNames = ["Enero", "Febrero", "Marzo", "Abril", "Mayo", "Junio", "Julio", "Agosto", "Septiembre", "Octubre", "Noviembre", "Diciembre"];
 let date = new Date();
+let ActualMonth = date.getMonth()
 
 function createDiv(content, col) {
 
@@ -19,6 +20,38 @@ function createDiv(content, col) {
     calendarDiv.appendChild(newDiv)
 
 }
+
+function printDaysBefore(date) {
+
+
+    let fristWeekDayActualMonth = new Date(date.getFullYear(), date.getMonth(), 1).getDay();
+    let day = (new Date(date.getFullYear(), date.getMonth(), 0).getDate() - fristWeekDayActualMonth) + 1;
+    console.log(day);
+
+    for (let i = fristWeekDayActualMonth; i > 0; i--) {
+
+        createDiv(day.toString(), "week")
+        day++;
+    }
+
+
+}
+
+function printDaysAfter(date) {
+
+
+    let lastWeekDayActualMonth = new Date(date.getFullYear(), date.getMonth() + 1, 1).getDay();
+    let day = 1;
+    console.log(lastWeekDayActualMonth);
+
+    for (let i = 7 - lastWeekDayActualMonth; i > 0; i--) {
+
+        createDiv(day.toString(), "week")
+        day++;
+    }
+
+}
+
 
 function printCalendar(date) {
 
@@ -39,17 +72,18 @@ function printCalendar(date) {
         createDiv(day, "weekNames")
     });
 
-    for (let i = 0; i < new Date(date.getFullYear(), date.getMonth(), 1).getDay(); i++) {
-        createDiv(" ", "week");
-    }
-    monthDays.forEach(day => {
-        if (date.getDate() != day) {
-            createDiv(day.toString(), "week");
-        } else {
-            createDiv(day.toString(), "actualDay");
+    printDaysBefore(date);
 
+    monthDays.forEach(day => {
+        if (date.getDate() == day && ActualMonth == date.getMonth()) {
+            createDiv(day.toString(), "actualDay");
+        } else {
+            createDiv(day.toString(), "week");
         }
     });
+
+    printDaysAfter(date);
+
 }
 
 function nextMonth(date) {
