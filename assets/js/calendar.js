@@ -17,12 +17,13 @@ function createDiv(content, col) {
 
     newDiv.classList.add(col);
 
-    calendarDiv.appendChild(newDiv)
+    calendarDiv.appendChild(newDiv);
+
+    return newDiv;
 
 }
 
 function printDaysBefore(date) {
-
 
     let fristWeekDayActualMonth = new Date(date.getFullYear(), date.getMonth(), 1).getDay();
     let day = (new Date(date.getFullYear(), date.getMonth(), 0).getDate() - fristWeekDayActualMonth) + 1;
@@ -32,13 +33,12 @@ function printDaysBefore(date) {
 
         createDiv(day.toString(), "week")
         day++;
-    }
 
+    }
 
 }
 
 function printDaysAfter(date) {
-
 
     let lastWeekDayActualMonth = new Date(date.getFullYear(), date.getMonth() + 1, 1).getDay();
     let day = 1;
@@ -48,6 +48,7 @@ function printDaysAfter(date) {
 
         createDiv(day.toString(), "week")
         day++;
+
     }
 
 }
@@ -56,15 +57,17 @@ function printDaysAfter(date) {
 function printCalendar(date) {
 
     let calendarDiv = document.getElementById("calendar");
+    let fullYear = date.getFullYear();
+    let month = date.getMonth();
 
     calendarDiv.innerHTML = "";
 
-    createDiv(date.getFullYear().toString(), "year");
-    createDiv("de " + monthsNames[date.getMonth()], "monthName");
+    createDiv(fullYear.toString(), "year");
+    createDiv("de " + monthsNames[month], "monthName");
 
     let monthDays = [];
 
-    for (let i = 0; i < new Date(date.getFullYear(), date.getMonth() + 1, 0).getDate(); i++) {
+    for (let i = 0; i < new Date(fullYear, month + 1, 0).getDate(); i++) {
         monthDays[i] = i + 1;
     }
 
@@ -75,10 +78,13 @@ function printCalendar(date) {
     printDaysBefore(date);
 
     monthDays.forEach(day => {
-        if (date.getDate() == day && ActualMonth == date.getMonth()) {
-            createDiv(day.toString(), "actualDay");
+        if (date.getDate() == day && ActualMonth == month) {
+            let div = createDiv(day.toString(), "actualDay");
+            div.onclick = console.log("ola");
         } else {
-            createDiv(day.toString(), "week");
+            let div = createDiv(day.toString(), "week");
+            div.onclick = console.log("ola");
+
         }
     });
 
