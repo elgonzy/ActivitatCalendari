@@ -27,7 +27,6 @@ function printDaysBefore(date) {
 
     let fristWeekDayActualMonth = new Date(date.getFullYear(), date.getMonth(), 1).getDay();
     let day = (new Date(date.getFullYear(), date.getMonth(), 0).getDate() - fristWeekDayActualMonth) + 1;
-    console.log(day);
 
     for (let i = fristWeekDayActualMonth; i > 0; i--) {
 
@@ -42,7 +41,6 @@ function printDaysAfter(date) {
 
     let lastWeekDayActualMonth = new Date(date.getFullYear(), date.getMonth() + 1, 1).getDay();
     let day = 1;
-    console.log(lastWeekDayActualMonth);
 
     for (let i = 7 - lastWeekDayActualMonth; i > 0; i--) {
 
