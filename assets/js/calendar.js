@@ -51,6 +51,17 @@ function printDaysAfter(date) {
 
 }
 
+function generateKey(year, month, day) {
+
+    let key;
+
+    key = year;
+    key += month < 10 ? "0" + month : month;
+    key += day < 10 ? "0" + day : day;
+
+    return key;
+
+}
 
 function printCalendar(date) {
 
@@ -78,10 +89,13 @@ function printCalendar(date) {
     monthDays.forEach(day => {
         if (date.getDate() == day && ActualMonth == month) {
             let div = createDiv(day.toString(), "actualDay");
-            div.onclick = console.log("ola");
+            let key = generateKey(fullYear, month, day);
+            div.setAttribute("onclick", "localStorage.setItem(" + key + ", prompt('Introduce tu comentario: '))");
+
         } else {
             let div = createDiv(day.toString(), "week");
-            div.onclick = console.log("ola");
+            let key = generateKey(fullYear, month, day);
+            div.setAttribute("onclick", "localStorage.setItem(" + key + ", prompt('Introduce tu comentario: '))");
 
         }
     });
