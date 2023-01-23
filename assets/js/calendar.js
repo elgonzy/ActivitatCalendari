@@ -63,6 +63,29 @@ function generateKey(year, month, day) {
 
 }
 
+function printComent(key, div) {
+
+    if (localStorage.getItem(key)) {
+
+        let content = localStorage.getItem(key);
+        div.classList.add("hasComent");
+
+        let newP = document.createElement("p");
+        let newContent = document.createTextNode(content);
+
+        newP.appendChild(newContent);
+        div.appendChild(newP);
+
+    }
+}
+
+function createComent(key, div) {
+
+    div.setAttribute("onclick", "localStorage.setItem(" + key + ", prompt('Introduce tu comentario: '))");
+
+    div.classList.add("hasComent");
+}
+
 function printCalendar(date) {
 
     let calendarDiv = document.getElementById("calendar");
@@ -87,16 +110,15 @@ function printCalendar(date) {
     printDaysBefore(date);
 
     monthDays.forEach(day => {
+        let key = generateKey(fullYear, month, day);
         if (date.getDate() == day && ActualMonth == month) {
             let div = createDiv(day.toString(), "actualDay");
-            let key = generateKey(fullYear, month, day);
-            div.setAttribute("onclick", "localStorage.setItem(" + key + ", prompt('Introduce tu comentario: '))");
-
+            createComent(key, div);
+            printComent(key, div);
         } else {
             let div = createDiv(day.toString(), "week");
-            let key = generateKey(fullYear, month, day);
-            div.setAttribute("onclick", "localStorage.setItem(" + key + ", prompt('Introduce tu comentario: '))");
-
+            createComent(key, div);
+            printComent(key, div);
         }
     });
 
