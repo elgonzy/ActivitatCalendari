@@ -6,6 +6,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="./assets/css/style.css">
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
     <title>Calendario</title>
 </head>
 
@@ -15,11 +16,11 @@
     </header>
     <article>
         <section>
-            <input type="button" class="myButton" value="-" onclick="previousMonth(date)">
+            <input type="button" class="myButton" id="previousButton" value="-">
             <div id="calendar" class="row">
 
             </div>
-            <input type="button" class="myButton" value="+" onclick="nextMonth(date)">
+            <input type="button" class="myButton" id="nextButton" value="+">
         </section>
     </article>
     <script src="./assets/js/calendar.js"></script>
