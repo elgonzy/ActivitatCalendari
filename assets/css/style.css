@@ -1,38 +1,89 @@
-/* Establecemos la fuente y evitamos repetir el fondo en todos los elementos */
+/* Set font and background color */
 
-* {
+body {
     font-family: 'Open Sans', sans-serif;
-    background-repeat: no-repeat;
-    box-sizing: border-box;
+    background-color: #3A5F6F;
 }
 
 
-/* Estilo general del calendario */
+/* Style for calendar container */
 
-#calendar {
-    margin-top: 5%;
-    margin-left: auto;
-    margin-right: auto;
+.container {
+    margin: 5% auto;
     width: 60%;
     height: 600px;
-    background-color: #F403FF;
-    border: 20px solid #F403FF;
+    background-color: #FFFFFF;
+    border: 20px solid #F5F9FA;
     border-radius: 10px;
     box-shadow: 0px 0px 10px 2px rgba(0, 0, 0, 0.3);
 }
 
 
-/* Estilo del año */
+/* Style for title */
+
+.title {
+    font-size: 2rem;
+    font-weight: bold;
+    text-align: center;
+    margin-top: 20px;
+    color: #3A5F6F;
+}
+
+
+/* Style for calendar */
+
+.calendar-container {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    margin: 20px;
+}
+
+.calendar-container input {
+    box-shadow: 0px 1px 0px 0px #B8C7D2;
+    background: #E2EBF0;
+    background-color: #E2EBF0;
+    border-radius: 6px;
+    border: 1px solid #B8C7D2;
+    cursor: pointer;
+    color: #3A5F6F;
+    font-size: 1.1rem;
+    font-weight: bold;
+    padding: 10px 20px;
+    text-decoration: none;
+    text-shadow: 0px 1px 0px #B8C7D2;
+    transition: all 0.3s ease-in-out;
+}
+
+.calendar-container input:hover {
+    background: linear-gradient(to bottom, #A9C9DE 5%, #C5DDEB 100%);
+    background-color: #A9C9DE;
+    box-shadow: 0px 2px 2px rgba(0, 0, 0, 0.25);
+    transform: translateY(-2px);
+}
+
+.calendar-container input:active {
+    position: relative;
+    top: 1px;
+    box-shadow: none;
+}
+
+
+/* Style for year display*/
 
 .year {
     display: inline-flex;
     width: 5%;
     justify-content: center;
     align-items: center;
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: #3A5F6F;
 }
 
 
-/* Estilo del nombre del mes */
+/* Style for month display*/
 
 .monthName {
     display: inline-flex;
@@ -41,29 +92,26 @@
     align-items: center;
     margin-top: 20px;
     padding: 0 5px;
-}
-
-.year,
-.monthName {
     font-size: 1.5rem;
     font-weight: bold;
+    color: #3A5F6F;
 }
 
 
-/* Estilo de los nombres de los días */
+/* Style for weekday names*/
 
 .weekNames {
     display: inline-flex;
     width: 14.28%;
     text-align: center;
     font-weight: bold;
-    color: #FFF;
-    text-shadow: 2px 2px 4px #000;
+    color: #3A5F6F;
     margin-top: 20px;
+    font-size: 1.2rem;
 }
 
 
-/* Estilo de los días */
+/* Style for days*/
 
 .week {
     display: inline-flex;
@@ -76,46 +124,19 @@
 }
 
 
-/* Estilo para resaltar el día actual */
+/* Style for current day*/
 
 .actualDay {
+    box-sizing: border-box;
     display: inline-flex;
-    background-color: #FFF;
-    border: 3px solid #F403FF;
-    border-radius: 9%;
+    background-color: #3A5F6F;
+    border: 3px solid #3A5F6F;
+    border-radius: 3%;
     width: 14.28%;
     line-height: 40px;
     text-align: center;
     font-weight: bold;
-    color: #F403FF;
+    color: #FFFFFF;
     box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
-}
-
-.myButton {
-    box-shadow: 0px 1px 0px 0px #B95089;
-    background: linear-gradient(to bottom, #8B5B7D 5%, #B95089 100%);
-    background-color: #8B5B7D;
-    border-radius: 6px;
-    border: 1px solid #803975;
-    display: inline-block;
-    cursor: pointer;
-    color: #FFF;
     font-size: 1.1rem;
-    font-weight: bold;
-    padding: 10px 20px;
-    text-decoration: none;
-    text-shadow: 0px 1px 0px #803975;
-    margin-top: 20px;
-}
-
-.myButton:hover {
-    background: linear-gradient(to bottom, #B95089 5%, #D86494 100%);
-    background-color: #B95089;
-    box-shadow: 0px 2px 2px rgba(0, 0, 0, 0.25);
-}
-
-.myButton:active {
-    position: relative;
-    top: 1px;
-    box-shadow: none;
 }
