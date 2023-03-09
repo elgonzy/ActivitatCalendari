@@ -1,75 +1,121 @@
+/* Establecemos la fuente y evitamos repetir el fondo en todos los elementos */
+
 * {
-    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    font-family: 'Open Sans', sans-serif;
     background-repeat: no-repeat;
+    box-sizing: border-box;
 }
+
+
+/* Estilo general del calendario */
 
 #calendar {
     margin-top: 5%;
-    margin-left: 29%;
-    width: 41%;
-    height: 423px;
+    margin-left: auto;
+    margin-right: auto;
+    width: 60%;
+    height: 600px;
     background-color: #F403FF;
-    border: 25px solid #F403FF;
-    border-radius: 5px;
+    border: 20px solid #F403FF;
+    border-radius: 10px;
+    box-shadow: 0px 0px 10px 2px rgba(0, 0, 0, 0.3);
 }
 
-p {
-    color: white;
-}
+
+/* Estilo del año */
 
 .year {
     display: inline-flex;
-    width: 8.5%;
+    width: 5%;
+    justify-content: center;
+    align-items: center;
 }
+
+
+/* Estilo del nombre del mes */
 
 .monthName {
     display: inline-flex;
-    width: 91.5%;
+    width: 90%;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 20px;
+    padding: 0 5px;
 }
+
+.year,
+.monthName {
+    font-size: 1.5rem;
+    font-weight: bold;
+}
+
+
+/* Estilo de los nombres de los días */
 
 .weekNames {
     display: inline-flex;
-    width: 14%;
+    width: 14.28%;
     text-align: center;
+    font-weight: bold;
+    color: #FFF;
+    text-shadow: 2px 2px 4px #000;
+    margin-top: 20px;
 }
+
+
+/* Estilo de los días */
 
 .week {
     display: inline-flex;
-    width: 14%;
+    width: 14.28%;
     text-align: center;
+    justify-content: center;
+    align-items: center;
+    margin-top: 10px;
+    font-size: 1.1rem;
 }
+
+
+/* Estilo para resaltar el día actual */
 
 .actualDay {
     display: inline-flex;
+    background-color: #FFF;
+    border: 3px solid #F403FF;
+    border-radius: 9%;
     width: 14.28%;
-    background-color: darkcyan;
-    border: 2px solid darkcyan;
-    border-radius: 5px;
+    line-height: 40px;
+    text-align: center;
+    font-weight: bold;
+    color: #F403FF;
+    box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
 }
 
 .myButton {
-    box-shadow: 0px 1px 0px 0px #fff6af;
-    background: linear-gradient(to bottom, #ffec64 5%, #ffab23 100%);
-    background-color: #ffec64;
+    box-shadow: 0px 1px 0px 0px #B95089;
+    background: linear-gradient(to bottom, #8B5B7D 5%, #B95089 100%);
+    background-color: #8B5B7D;
     border-radius: 6px;
-    border: 1px solid #ffaa22;
+    border: 1px solid #803975;
     display: inline-block;
     cursor: pointer;
-    color: #333333;
-    font-family: Arial;
-    font-size: 15px;
+    color: #FFF;
+    font-size: 1.1rem;
     font-weight: bold;
-    padding: 6px 24px;
+    padding: 10px 20px;
     text-decoration: none;
-    text-shadow: 0px 1px 0px #ffee66;
+    text-shadow: 0px 1px 0px #803975;
+    margin-top: 20px;
 }
 
 .myButton:hover {
-    background: linear-gradient(to bottom, #ffab23 5%, #ffec64 100%);
-    background-color: #ffab23;
+    background: linear-gradient(to bottom, #B95089 5%, #D86494 100%);
+    background-color: #B95089;
+    box-shadow: 0px 2px 2px rgba(0, 0, 0, 0.25);
 }
 
 .myButton:active {
     position: relative;
     top: 1px;
+    box-shadow: none;
 }

@@ -1,0 +1,104 @@
+{
+    "festiusAnuals": [{
+            "data": "20230406",
+            "nom_del_festiu": "Dijous Sant"
+        },
+        {
+            "data": "20230407",
+            "nom_del_festiu": "Divendres Sant"
+        },
+        {
+            "data": "20230410",
+            "desc": "Dilluns de Pasqua Florida"
+        },
+        {
+            "data": "20230529",
+            "desc": "Dilluns de Pasqua Granada"
+        }
+    ],
+    "festiusFixes": [{
+            "data": "0101",
+            "nom_del_festiu": "Cap d'Any"
+        },
+        {
+            "data": "0106",
+            "nom_del_festiu": "Reis"
+        },
+        {
+            "data": "0425",
+            "nom_del_festiu": "Dilluns de Pasqua Florida"
+        },
+        {
+            "data": "0613",
+            "nom_del_festiu": "Dilluns de Pasqua Granada"
+        },
+        {
+            "data": "0624",
+            "nom_del_festiu": "Sant Joan"
+        },
+        {
+            "data": "0815",
+            "nom_del_festiu": "L'Assumpció"
+        },
+        {
+            "data": "1012",
+            "nom_del_festiu": "Festa Nacional d'Espanya"
+        },
+        {
+            "data": "1101",
+            "nom_del_festiu": "Tots Sants"
+        },
+        {
+            "data": "1206",
+            "nom_del_festiu": "Dia de la Constitució"
+        },
+        {
+            "data": "1208",
+            "nom_del_festiu": "La Immaculada"
+        },
+        {
+            "data": "1226",
+            "nom_del_festiu": "Sant Esteve"
+        },
+        {
+            "data": "0106",
+            "nom_del_festiu": "Reis"
+        },
+        {
+            "data": "0501",
+            "nom_del_festiu": "Festa del Treball"
+        },
+        {
+            "data": "0815",
+            "nom_del_festiu": "L'Assumpció"
+        },
+        {
+            "data": "0911",
+            "nom_del_festiu": "Diada Nacional de Catalunya"
+        },
+        {
+            "data": "1012",
+            "nom_del_festiu": "Festa Nacional d'Espanya"
+        },
+        {
+            "data": "1101",
+            "nom_del_festiu": "Tots Sants"
+        },
+        {
+            "data": "1206",
+            "nom_del_festiu": "Dia de la Constitució"
+        },
+        {
+            "data": "1208",
+            "nom_del_festiu": "La Immaculada"
+        },
+        {
+            "data": "1225",
+            "nom_del_festiu": "Nadal"
+        },
+        {
+            "data": "1226",
+            "nom_del_festiu": "Sant Esteve"
+        }
+    ]
+}
