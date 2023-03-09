@@ -98,13 +98,13 @@ $(document).ready(function() {
 
     // Helper function that switches to the next month when the Next button is clicked
     function nextMonth() {
-        date = new Date(date.getFullYear(), date.getMonth() + 1, 1);
+        date = new Date(date.getFullYear(), date.getMonth() + 1, date.getDate());
         printCalendar(date);
     }
 
     // Helper function that switches to the previous month when the Previous button is clicked
     function previousMonth() {
-        date = new Date(date.getFullYear(), date.getMonth() - 1, 1);
+        date = new Date(date.getFullYear(), date.getMonth() - 1, date.getDate());
         printCalendar(date);
     }
 
